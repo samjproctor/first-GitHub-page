@@ -2,6 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
+import { AcousticRoom3D } from './components/AcousticRoom3D'
 import './App.css'
 
 function App() {
@@ -29,6 +30,11 @@ function App() {
           Count is {count}
         </button>
       </section>
+
+      <div style={{ padding: '0 2rem', maxWidth: '1000px', margin: '0 auto' }}>
+        <h2>Acoustic Room 3D View</h2>
+        <AcousticRoom3D />
+      </div>
 
       <div className="ticks"></div>
 
