@@ -22,15 +22,15 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Uncomment the following lines if your application requires a build step (e.g., npm, yarn).
-      # - name: Setup Node.js
-      #   uses: actions/setup-node@v4
-      #   with:
-      #     node-version: '20'
-      # - name: Install dependencies
-      #   run: npm ci
-      # - name: Build the application
-      #   run: npm run build
+      # Build the application
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        run: npm ci
+      - name: Build the application
+        run: npm run build
 
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v5
@@ -39,8 +39,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           # Specify the path to your build output directory here (e.g., './dist' or './build').
-          # Defaulting to '.' for static sites.
-          path: '.'
+          path: './dist'
 
   deploy:
     environment:
